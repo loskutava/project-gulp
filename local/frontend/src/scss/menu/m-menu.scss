@@ -1,0 +1,93 @@
+.m-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: $link-color;
+  padding: 29px 0 0 20px;
+  z-index: 0;
+
+  @media (max-width: $screen-xs-mobile-max) {
+    width: 295px;
+  }
+
+  &.m-open-menu {
+    @media (max-width: $screen-md-max) {
+      display: block;
+    }
+  }
+
+  &.mCustomScrollbar {
+    overflow-y: hidden;
+  }
+
+  &.mCS_no_scrollbar {
+    padding-right: 20px;
+
+    .mCustomScrollBox {
+      padding-right: 0;
+    }
+  }
+
+  .mCustomScrollBox {
+    padding-right: 20px;
+  }
+
+  .mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background: rgba(255,255,255,.8);
+  }
+}
+
+.m-page {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+
+  .m-open & {
+    transform: translate(-400px);
+    transform: translate3d(-400px,0,0);
+
+    @media (max-width: $screen-xs-mobile-max) {
+      transform: translate(-295px);
+      transform: translate3d(-295px,0,0);
+    }
+  }
+}
+
+body.m-open {
+  overflow: hidden;
+}
+
+.m-menu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.m-menu-close {
+  //@extend .btn-close;
+  position: relative;
+  width: 32px;
+  height: 32px;
+
+  &:before,
+  &:after {
+    height: 2px;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      background: rgba(255,255,255,.8);
+    }
+  }
+}

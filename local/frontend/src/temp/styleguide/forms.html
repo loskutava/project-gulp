@@ -1,0 +1,167 @@
+<h2>Форма</h2>
+<form id="formStyleguide" class="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="file" id="styleguideFile" name="styleguideFile" class="form-control input" data-placeholder="Файл не выбран" data-browse="Загрузить файл">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field file-multiple">
+                    <input type="file" id="styleguideFileMulti" name="styleguideFileMulti" multiple class="form-control input">
+                    <div class="file-multiple_container">
+                        <ul class="file-multiple_list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="text" id="formGuideline1" name="formGuideline1" placeholder="Введите что-нибудь" value="" class="form-control input">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="text" id="formGuideline2" name="formGuideline2" placeholder="Введите что-нибудь" value="" class="form-control input">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="text" id="formGuideline3" name="formGuideline3" placeholder="Введите что-нибудь" value="" class="form-control input">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="tel" id="formGuideline4" name="formGuideline4" placeholder="+375 (29) 870-11-22" value="" class="form-control input">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <input type="email" id="formGuideline5" name="formGuideline5" placeholder="Ваш E-mail" value="" class="form-control input">
+                </div>
+                <div class="form-text">
+                    Номер телефона должен быть белорусского оператора в противном случае для заключения
+                    договора страхования вам необходимо обратиться <a href="#">в ближайшее отделение компании</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <select class="formstyler" id="formGuideline6" name="formGuideline6">
+                        <option value="1">В городе Минске</option>
+                        <option value="2">В городе Витебске</option>
+                        <option value="3">В городе Орша</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <select class="select-filter formstyler" id="formGuideline7" name="formGuideline7">
+                        <option value="1">В городе Минске</option>
+                        <option value="2">В городе Витебске</option>
+                        <option value="3">В городе Орша</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="formGuidelineCheck" checked value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Навел на активный</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="formGuidelineCheck" checked value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Навел на активный</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="formGuidelineCheck" value="" class="check-cust">
+                        <span class="check-cust_i"></span>
+                        <span>Пункт 1</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group form-group_submit">
+                <input class="btn btn-default btn-submit" type="submit" value="Отправить">
+            </div>
+        </div>
+    </div>
+    <script>
+        !function () {
+            'use strict';
+            //Валидация формы
+            function validFormGuideline() {
+                var form = $('#formStyleguide');
+                if (form.length && $.fn.validate) {
+                    form.validate({
+                        rules: {
+                            formGuideline1: {
+                                required: true,
+                                minlength: 2
+                            },
+                            formGuideline2: 'required',
+                            calcMonth: 'required',
+                            formGuideline3: 'required',
+                            formGuideline4: 'required',
+                            formGuideline5: {
+                                required: true,
+                                email: true
+                            },
+                            formGuideline6: 'required',
+                            formGuideline8: 'required'
+                        }
+                    });
+
+//                        required: "Заполните поле",
+//                        remote: "Исправьте поля",
+//                        email: "Некорректный e-mail",
+//                        url: "Введите корректный URL",
+//                        date: "Введите правильную дату",
+//                        dateISO: "Введите правильную дату ( ISO )",
+//                        number: "Введите корректный номер",
+//                        digits: "Введите только цифры",
+//                        creditcard: "Введите корректный номер кредитной карты",
+//                        equalTo: "Поля не совпадают",
+//                        maxlength: $.validator.format( "Максимум {0} символов" ),
+//                        minlength: $.validator.format( "Минимум {0} символов" ),
+//                        rangelength: $.validator.format( "Please enter a value between {0} and {1} characters long" ),
+//                        range: $.validator.format( "Введите значение между {0} и {1}" ),
+//                        max: $.validator.format( "Минимум {0} символов" ),
+//                        min: $.validator.format( "Максимум {0} символов" )
+                }
+            }
+            $(window).on('load', function () {
+                validFormGuideline();
+            });
+        }();
+    </script>
+</form>

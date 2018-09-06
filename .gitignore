@@ -1,0 +1,9 @@
+node_modules
+.idea
+/bitrix/
+/upload/
+*.tar
+*.gz
+*.zip
+/nbproject/
+/local/modules/
