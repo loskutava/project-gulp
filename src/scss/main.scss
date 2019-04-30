@@ -2,15 +2,15 @@
 
 @import "bootstrap/bootstrap";
 
-@import "fontface";
-@import "var";
-@import "mixin";
+@import "mixins/fontface";
+@import "mixins/var";
+@import "mixins/mixin";
 
-@import "project";
-@import "sprite";
-@import "sprite_svg";
-@import "sprite_svg-bg";
-@import "mixin-svg";
+@import "mixins/project";
+@import "mixins/sprite";
+@import "mixins/sprite_svg";
+@import "mixins/sprite_svg-bg";
+@import "mixins/mixin-svg";
 //@import "styleguide/forms";
 //@import "styleguide/formstyler";
 //@import "print";

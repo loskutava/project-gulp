@@ -257,6 +257,71 @@
     }
     //-----END--МОБИЛЬНОЕ МЕНЮ-----
 
+    //-----Tabs-----
+    function tabs() {
+        var $block = $('.tabs');
+        if (!$block.length) {
+            return false;
+        }
+        $block.each(function () {
+            var selfTabs = $(this);
+            var $item = selfTabs.find('.tab');
+            var $panel = selfTabs.find('.tab__panel');
+            var wWidth = window.innerWidth;
+            var heightList = '';
+
+            $item.each(function () {
+                var self = $(this);
+                var selfP = self.find('.tab__panel');
+                var heightItem = '';
+
+                if (wWidth > 767) {
+                    if (self.hasClass('active')) {
+                        heightList = selfP.innerHeight();
+                    }
+                } else {
+                    if (self.hasClass('active')) {
+                        heightItem = selfP.find('.tab__panel-wrap').innerHeight();
+                    } else {
+                        heightItem = '';
+                    }
+                }
+
+                selfP.css({'height': heightItem});
+
+                self.off('click').on('click', function () {
+                    $item.each(function () {
+                        $(this).removeClass('active');
+                    });
+                    $panel.each(function () {
+                        $(this)
+                          .removeClass('active')
+                          .css({'height': ''});
+                    });
+
+                    if (wWidth > 767) {
+                        var thPadding = self.find('.tab__panel-wrap').innerHeight();
+                        selfTabs.css({'padding-bottom': thPadding});
+                    }
+                    else {
+                        selfTabs.css({'padding-bottom': ''});
+                        selfP.css({'height': selfP.find('.tab__panel-wrap').innerHeight()});
+
+                        // $('body, html').animate({
+                        //     scrollTop: self.offset().top
+                        // }, 500);
+                    }
+                    self.addClass('active');
+                    selfP.addClass('active');
+                });
+            });
+
+            selfTabs
+              .addClass('tabsActive')
+              .css({'padding-bottom': heightList});
+        });
+    }
+
     $(function () {
         footerDown();
         initFormstyler();
@@ -267,9 +332,11 @@
         myMobileMenu();
         initFormstyler();
         initFileMultiple();
+        tabs();
     });
     gWindow.on('resize', function () {
         footerDown();
         myMobileMenu();
+        tabs();
     });
 }();

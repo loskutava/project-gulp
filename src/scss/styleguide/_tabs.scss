@@ -1,0 +1,63 @@
+.tabs {
+  padding-bottom: 0;
+  transition: all .35s;
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.tab {
+  transition: padding .35s;
+  cursor: pointer;
+
+  &.active {
+    cursor: default;
+
+    .tab__nav {
+      background: $color__primary;
+    }
+  }
+
+  &__nav {
+    position: relative;
+    padding: 15px 30px;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity .35s ease .05s, visibility .3s;
+    z-index: 0;
+    visibility: hidden;
+    display: none;
+
+    @include media-breakpoint-down(phx) {
+      position: relative;
+      top: auto;
+      display: block;
+      height: 0;
+      transition: height .4s ease;
+    }
+
+    &.active {
+      z-index: 2;
+      visibility: visible;
+
+      .tabsActive & {
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .tabsActive & {
+      display: block;
+    }
+  }
+}
