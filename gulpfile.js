@@ -21,6 +21,8 @@ const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
 const gulpIf = require('gulp-if');
 
+const browserSync = require('browser-sync').create();
+
 // const spritesmith = require('gulp.spritesmith'); //png-sprite
 // var imagesNormalizer = require('gulp-retina-sprites-normalizer'); //png-sprite
 
@@ -30,7 +32,7 @@ const gulpIf = require('gulp-if');
 
 //-----html------
 gulp.task('html', function () {
-  return gulp.src(['src/pages/*.html'])
+  return gulp.src(['src/pages/**/*.html'])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file',
@@ -45,7 +47,7 @@ gulp.task('styles', function () {
   // const postcssOptions = [require('autoprefixer'), require('cssnano')];
   const postcssOptions = [autoprefixer, cssnano];
 
-  return gulp.src('src/scss/style.scss')
+  return gulp.src('src/scss/main.scss')
       .pipe(sass())
       .pipe(postcss(postcssOptions))
       .pipe(rename({suffix: '.min'}))
@@ -53,7 +55,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('styles-dev', function () {
-  return gulp.src('src/scss/style.scss')
+  return gulp.src('src/scss/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
@@ -96,7 +98,7 @@ gulp.task('images-svg', function () {
 
 //-----sprites------
 gulp.task('spritesvg', function () {
-  return gulp.src('src/sprites/svg/**/*.svg')
+  return gulp.src('src/images/sprites/svg/**/*.svg')
       .pipe(cheerio({
         run: function ($) {
           $('[fill]').removeAttr('fill');
@@ -113,7 +115,7 @@ gulp.task('spritesvg', function () {
             render: {
               scss: {
                 dest: '_sprite_svg.scss',
-                template: 'src/scss/_spritesvgtemp.scss'
+                template: 'src/scss/_dev/_spritesvgtemp.scss'
               }
             }
           }
@@ -125,11 +127,11 @@ gulp.task('spritesvg', function () {
           }
         }
       }))
-      .pipe(gulpIf('*.scss', gulp.dest('src/scss'), gulp.dest('build/images')));
+      .pipe(gulpIf('*.scss', gulp.dest('src/scss/_dev'), gulp.dest('build/images')));
 });
 
 gulp.task('spritesvgbg', function () {
-  return gulp.src('src/sprites/svg-bg/**/*.svg')
+  return gulp.src('src/images/sprites/svg-bg/**/*.svg')
     .pipe(svgSprite({
       shape: {
         spacing: {
@@ -145,7 +147,7 @@ gulp.task('spritesvgbg', function () {
           render: {
             scss: {
               dest: "_sprite_svg-bg.scss",
-              template: "src/scss/_spritesvgtemp_bg.scss"
+              template: "src/scss/_dev/_spritesvgtemp_bg.scss"
             }
           }
         }
@@ -154,7 +156,7 @@ gulp.task('spritesvgbg', function () {
         mapname: "icons"
       }
     }))
-    .pipe(gulpIf('*.scss', gulp.dest('src/scss'), gulp.dest('build/images')));
+    .pipe(gulpIf('*.scss', gulp.dest('src/scss/_dev'), gulp.dest('build/images')));
 });
 
 // gulp.task('sprite', function() {
@@ -187,6 +189,14 @@ gulp.task('clear', function () {
   return del(['build']);
 });
 
+gulp.task('serve', function () {
+    browserSync.init({
+        server: 'build'
+    });
+
+    browserSync.watch('build/**/*.*').on('change', browserSync.reload)
+});
+
 gulp.task('build', gulp.series(
     'clear',
     'spritesvg',
@@ -207,6 +217,5 @@ gulp.task('dev', gulp.series(
     'clear',
     'spritesvg',
     'spritesvgbg',
-    gulp.parallel('html', 'styles-dev', 'script', 'images-dev', 'images-svg'),
-    'watch'
+    gulp.parallel('html', 'styles-dev', 'script', 'images-dev', 'images-svg', 'watch', 'serve')
 ));

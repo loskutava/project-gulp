@@ -2,18 +2,21 @@
 
 @import "bootstrap/bootstrap";
 
-@import "mixins/fontface";
-@import "mixins/var";
-@import "mixins/mixin";
+@import "_dev/fontface";
+@import "_dev/var";
+@import "_dev/mixin";
 
-@import "mixins/project";
-@import "mixins/sprite";
-@import "mixins/sprite_svg";
-@import "mixins/sprite_svg-bg";
-@import "mixins/mixin-svg";
+@import "_dev/project";
+@import "_dev/sprite";
+@import "_dev/sprite_svg";
+@import "_dev/sprite_svg-bg";
+@import "_dev/mixin-svg";
 //@import "styleguide/forms";
 //@import "styleguide/formstyler";
 //@import "print";
+
+
+//----Turnkey Solutions----
 
 
 //----Styleguide----
