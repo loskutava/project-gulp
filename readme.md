@@ -2,7 +2,7 @@ npm install
 gulp dev  
 gulp build 
 
-##svg sprites
+## svg sprites
 #### 1
 ```html
 <svg class="icon icon-name">
@@ -15,12 +15,12 @@ gulp build
     @include sprite(name);
  }
 ```
-##png sprites
-####1
+## png sprites
+#### 1
 ```html
 <i class="ic ic-name"></i>
 ```
-####2
+#### 2
 ```scss
 .block {
     @extend .ic;
