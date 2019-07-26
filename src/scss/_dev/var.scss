@@ -1,28 +1,17 @@
+$color__primary:          green;
+$color__text:             #000;
+$color__headings:         #000;
+$color__link:             $color__primary;
+$color__link_hover:       $color__text;
+$color__border:           #ccc;
 
+$bg__body:                #fff;
 
-
-//Color
-$brand-color-1:     #024da1;
-$brand-color-2:     #3D5EAB;
-
-$bord-color:        #ccc;
-$bord-color-light:  #4C6BB2;
-$body-bg:           #fff;
-$block-bg:          #ccc;
-
-//Transition
-//$transitionBlock:   .5s;
-
-//Fonts
-$font-family-reserve:    Helvetica, Arial, sans-serif;
+$font__size_base:         16px;
+$font__line-height_base:  1.4;
+$font__family-reserve:    Helvetica, Arial, sans-serif;
 //$roboto-r:   'Roboto-Regular', $font-family-base;
-//$roboto-m:   'Roboto-Medium', $font-family-base;
-//$roboto-l:   'Roboto-Light', $font-family-base;
-$font-family-base:        $font-family-reserve;
-
-//Link
-$link-color:        $brand-color-1;
-$link-color-hover:  $brand-color-2;
+$font__family-base:       $font__family-reserve;
 
 //Text
 $font-size-base:    16px;

@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $font__size_base;
+  line-height: $font__line-height_base;
+  color: $color__text;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  min-width: 300px;
+  overflow-x: auto;
+  background-color: $bg__body;
+}
+
+.page {
+  max-width: $container-max;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: $bg__body;
+}
+
+//.blackout {
+//  display: none;
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  right: 0;
+//  height: 100%;
+//  width: 100%;
+//  background: rgba(0,0,0,.7);
+//  z-index: 105;
+//}
+
+a {
+  color: $color__link;
+  transition: color .2s;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color__link_hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a[href^='tel:'] {
+  white-space: nowrap;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+b, strong {
+
+}
+
+i, em {
+
+}
+
+img {
+  max-width: 100%;
+}
+
+.mt-0 { margin-top: 0!important; }
+.mb-0 { margin-bottom: 0!important; }
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.mark {
+  color: $color__primary;
+}

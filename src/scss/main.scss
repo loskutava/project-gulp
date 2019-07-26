@@ -1,32 +1,20 @@
-//----Main----
-
 @import "bootstrap/bootstrap";
 
-@import "_dev/fontface";
+@import "styleguide/fontface";
 @import "_dev/var";
 @import "_dev/mixin";
 
-@import "_dev/global";
+@import "styleguide/global";
 @import "_dev/sprite";
 @import "_dev/sprite_svg";
 @import "_dev/sprite_svg-bg";
 @import "_dev/mixin-svg";
-//@import "styleguide/forms";
-//@import "styleguide/formstyler";
 //@import "print";
 
+//----Styleguide----
+@import "styleguide/headings";
+@import "styleguide/list";
+@import "styleguide/table";
+@import "styleguide/buttons";
 
 //----Turnkey Solutions----
-
-
-//----Styleguide----
-
-//Libs
-//@import "_libs/jquery.mmenu.all";
-//@import "_libs/jquery.mCustomScrollbar";
-
-//Menu
-//@import "menu/m-menu";
-//@import "menu/menu-mobile";
-
-//----Components-----

@@ -1,0 +1,40 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 50px;
+  padding: 0 32px;
+  border: 2px solid transparent;
+  font-size: $font__size_base;
+  @include font-face-regular();
+  line-height: 50px;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: nowrap;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image: none;
+  background: transparent;
+  text-decoration: none;
+  transition: all .3s;
+  text-align: center;
+  letter-spacing: normal;
+  vertical-align: top;
+  outline: none;
+  cursor: pointer;
+
+  &_default {
+    color: #fff;
+    background: $color__primary;
+
+    &:hover {
+      color: #fff;
+      background: #000;
+    }
+    &:active,
+    &.active {
+      color: #fff;
+      background: $color__primary;
+    }
+  }
+}

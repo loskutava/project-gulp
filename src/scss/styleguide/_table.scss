@@ -1,0 +1,60 @@
+table {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  margin-top: 0;
+  margin-bottom: 60px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+
+  th,
+  td {
+    padding: 10px 10px 9px;
+    font-size: $font__size_base;
+    line-height: $font__line-height_base;
+    color: $color__text;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid $color__border;
+    background: none;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  tr {
+    &:last-child {
+      td, th {
+        border-bottom: none;
+      }
+    }
+  }
+
+  thead {
+    border-bottom: 2px solid $color__border;
+  }
+}
+
+p {
+  + table {
+    margin-top: 60px;
+  }
+}
+
+.table-responsive {
+  width: 100%;
+  min-width: 100%;
+  min-height: .01%;
+  margin-bottom: 60px;
+  overflow-x: auto;
+  @include clearfix;
+
+  table {
+    margin: 0;
+  }
+}

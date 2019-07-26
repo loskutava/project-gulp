@@ -1,5 +1,6 @@
 @mixin font-face-regular() {
-  //font-family: $roboto-r;
+  font-family: $font__family-base;
+  font-weight: normal;
 }
 @mixin font-face-bold() {
   //font-family: $geometria-b;

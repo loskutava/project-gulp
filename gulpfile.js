@@ -172,6 +172,12 @@ gulp.task('spritesvgbg', function () {
 // });
 
 
+// gulp.task('fonts', function () {
+//     return gulp.src('src/fonts/**/*.*')
+//         .pipe(gulp.dest('build/fonts'));
+// });
+
+
 gulp.task('clear', function () {
     return del(['build']);
 });
@@ -198,9 +204,13 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('watch', function () {
+    gulp.watch('src/temp/**/*.html', gulp.series('html'));
+    gulp.watch('src/pages/*.html', gulp.series('html'));
     gulp.watch('src/scss/**/*.*', gulp.series('styles'));
+    gulp.watch('src/js/main.js', gulp.series('script'));
     gulp.watch('src/images/**/*.{png,jpg,gif}', gulp.series('images'));
     gulp.watch('src/images/**/*.svg', gulp.series('images:svg'));
+    // gulp.watch('src/fonts/**/*.*', gulp.series('fonts'));
 });
 
 gulp.task('dev', gulp.series(
