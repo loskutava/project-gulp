@@ -22,10 +22,24 @@ body {
 }
 
 .page {
-  max-width: $container-max;
-  margin: 0 auto;
+  width: 100%;
   overflow: hidden;
   background-color: $bg__body;
+}
+
+.container {
+  width: 100%;
+  max-width: $container__width_max;
+  padding: 0 $container__padding;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(tb) {
+    padding: 0 $container__padding_tb
+  }
+
+  &_wide {
+    max-width: none;
+  }
 }
 
 //.blackout {

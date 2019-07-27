@@ -1,3 +1,5 @@
+// http://learn.javascript.ru/screencast/gulp
+
 'use strict';
 
 const gulp = require('gulp');

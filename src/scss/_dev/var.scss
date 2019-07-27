@@ -13,34 +13,12 @@ $font__family-reserve:    Helvetica, Arial, sans-serif;
 //$roboto-r:   'Roboto-Regular', $font-family-base;
 $font__family-base:       $font__family-reserve;
 
-//Text
-$font-size-base:    16px;
-$line-height-base:  1.5;
-$text-color:        #000;
-$text-light:        #808080;
-$print-color:       #000;
+$container__width_max:    1440px;
+$container__padding:      24px;
+$container__padding_tb:   80px;
 
-$heading-color:     #000;
-
-$padding-content:  24px;
-
-$table-color:      $heading-color;
-$table-head-bg2:   #638AE6;
-
-//Form
-$field-height:             42px;
-$field-height-sm:          38px;
-$field-height-small:       30px;
-$placeholder-color:        #a6a6a6;
-$bord-color-form:          #D1D1D1;
-//$bord-color-form-hover:     $brand-color-7;
-$border-radius-form:        0;
-
-$border-radius-base:        4px;
-
-$container-max:             2560px;
-$container-head-padding-md: 32px;
-$content-padding-right:     170px;
-
-$rates-height:               82px;
+//----Media----
+//@include media-breakpoint-up(lt)
+//@include media-breakpoint-down(lt)
+//@include media-breakpoint-only(lt)
 
