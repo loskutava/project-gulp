@@ -1,10 +1,9 @@
+//----Libs----
 @import "bootstrap/bootstrap";
 
-@import "styleguide/fontface";
-@import "_dev/var";
-@import "_dev/mixin";
-
-@import "styleguide/global";
+//----Dev----
+@import "_dev/variables";
+@import "_dev/mixins/fontfamily";
 @import "_dev/sprite";
 @import "_dev/sprite_svg";
 @import "_dev/sprite_svg-bg";
@@ -12,9 +11,13 @@
 //@import "print";
 
 //----Styleguide----
-@import "styleguide/headings";
-@import "styleguide/list";
-@import "styleguide/table";
-@import "styleguide/buttons";
+@import "styleguide/global";
+//@import "styleguide/headings";
+//@import "styleguide/list";
+//@import "styleguide/table";
+//@import "styleguide/buttons";
 
-//----Turnkey Solutions----
+//----Structure----
+@import "structure/page";
+
+//----Components----

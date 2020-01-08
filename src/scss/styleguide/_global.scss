@@ -1,13 +1,13 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  font-size: $font__size_base;
-  line-height: $font__line-height_base;
+  font-size: $font__size;
+  line-height: $font__line-height;
   color: $color__text;
 }
 
@@ -18,13 +18,7 @@ html {
 body {
   min-width: 300px;
   overflow-x: auto;
-  background-color: $bg__body;
-}
-
-.page {
-  width: 100%;
-  overflow: hidden;
-  background-color: $bg__body;
+  background-color: $color__bg;
 }
 
 .container {
@@ -35,6 +29,10 @@ body {
 
   @include media-breakpoint-up(tb) {
     padding: 0 $container__padding_tb
+  }
+
+  @include media-breakpoint-up(lt) {
+    padding: 0 $container__padding_lt
   }
 
   &_wide {
@@ -55,22 +53,22 @@ body {
 //}
 
 a {
-  color: $color__link;
+  color: $color__primary;
   transition: color .2s;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $color__link_hover;
+    color: $color__text;
   }
 
   &:focus {
     outline: none;
   }
-}
-
-a[href^='tel:'] {
-  white-space: nowrap;
+  
+  &[href^='tel:'] {
+    white-space: nowrap;
+  }
 }
 
 p {
@@ -88,10 +86,14 @@ i, em {
 
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 
 .mt-0 { margin-top: 0!important; }
 .mb-0 { margin-bottom: 0!important; }
+
+.pt-0 { padding-top: 0!important; }
+.pb-0 { padding-bottom: 0!important; }
 
 .uppercase {
   text-transform: uppercase;

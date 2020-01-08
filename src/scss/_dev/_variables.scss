@@ -1,0 +1,32 @@
+$color__primary:          green;
+$color__text:             #000;
+$color__headings:         #000;
+$color__border:           #ccc;
+$color__bg:               #fff;
+
+$font__size:              16px;
+$font__line-height:       1.4;
+$font__family:            sans-serif;
+
+$container__width_max:    1440px;
+$container__padding:      24px;
+$container__padding_tb:   30px;
+$container__padding_lt:   80px;
+
+//----Breakpoints----
+
+//$grid-breakpoints: (
+//  ph:   0,        //phone
+//  phx:  576px,    //phone large
+//  tb:   768px,    //tablet
+//  tbx:  992px,    //tablet large
+//  lt:   1260px,   //laptop
+//  dt:   1400px,   //desktop
+//  dtx:  1600px,   //desktop large
+//  dt2x: 2000px    //desktop xlarge
+//) !default;
+
+//@include media-breakpoint-up(lt)
+//@include media-breakpoint-down(lt)
+//@include media-breakpoint-only(lt)
+

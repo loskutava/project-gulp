@@ -61,7 +61,7 @@ gulp.task('styles', function () {
 
 
 gulp.task('script', function () {
-    return gulp.src('src/js/main.js')
+    return gulp.src('src/js/*.js')
         .pipe(rigger())
         .pipe(gulpIf(util.env.type !== 'development', uglify()))
         .pipe(rename({suffix: '.min'}))
